@@ -1,0 +1,38 @@
+dependencies:
+  - aave/aave-v3-core@1.16.0
+  - OpenZeppelin/openzeppelin-contracts@4.5.0
+compiler:
+  solc:
+    remappings:
+      - '@aave=aave/aave-v3-core@1.16.0'
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.5.0'
+networks:
+  default: 'rinkeby'
+  rinkeby:
+    #weth_gateway: '0xD1DECc6502cc690Bc85fAf618Da487d886E54Abe'
+    weth_token: '0xd74047010D77c5901df5b0f9ca518aED56C85e8D'
+    #weth_token: '0xc778417E063141139Fce010982780140Aa0cD5Ab'
+    dai_eth_price_feed: '0x74825DbC8BF76CC4e9494d0ecB210f676Efa001D'
+    dai_token: '0x4aAded56bd7c69861E8654719195fCA9C670EB45' #'0x49866611AA7Dc30130Ac6A0DF29217D16FD87bc0' #'0x95b58a6Bff3D14B7DB2f5cb5F0Ad413DC2940658'
+    pool_addresses_provider: '0xBA6378f1c1D046e9EB0F538560BA7558546edF3C'
+    account: 'metamask'
+  kovan:
+    #weth_gateway: '0x509B2506FbA1BD41765F6A82C7B0Dd4229191768'
+    weth_token: '0xF1bE881Ee7034ebC0CD47E1af1bA94EC30DF3583'
+    dai_eth_price_feed: '0x22B58f1EbEDfCA50feF632bD73368b2FdA96D541'
+    pool_addresses_provider: '0x651b8A8cA545b251a8f49B57D5838Da0a8DFbEF9'
+    dai_token: '0x58Cd851c28dF05Edc7F018B533C0257DE57673f7'
+    account: 'metamask'
+  mainnet-fork: 
+    weth_token: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'
+    pool_addresses_provider: 0
+    dai_token: '0x6B175474E89094C44Da98b954EedeAC495271d0F'
+    dai_eth_price_feed: 0
+  polygon-mainnet-fork:
+    weth_token: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619'
+    dai_token: '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063'
+    pool_address_provider: '0x69FA688f1Dc47d4B5d8029D5a35FB7a548310654'
+    dai_eth_price_feed: '0xFC539A559e170f848323e19dfD66007520510085'
+dotenv: .env
+wallets:
+  from_key: ${PRIVATE_KEY}
